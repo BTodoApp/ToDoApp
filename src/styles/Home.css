@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 6rem;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-right: 20px;
+}
+
+.image {
+  width: 1080px; /* Adjust the width to your desired size */
+  margin-left: 20rem; /* Move the image to the right */
+  margin-top: 5rem; /* Move the image to the right */
+  height: 1920;
+}
+
+h1 {
+  margin: 0; /* Remove the default margin */
+}
