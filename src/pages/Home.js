@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '../images/image.png';
 import "../styles/Home.css"
 
 const Home = () => {
@@ -8,7 +7,7 @@ const Home = () => {
       <div className="title">Welcome to ToDoApp</div>
       <div className="content">
         <div className="image-container">
-          <img src={image} alt="Picture of application" className="image" />
+          <img src="../images/image.png" alt="Picture of application" className="image" />
         </div>
       </div>
     </div>
