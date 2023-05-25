@@ -16,7 +16,7 @@ You can access the deployed application [here](https://todoapp-production-51d5.u
 ## Getting Started
 To run the ToDoApp frontend locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/todoapp-frontend.git`
+1. Clone the repository: `git clone https://github.com/BTodoApp/ToDoApp.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 4. Open the application in your browser at [http://localhost:3000](http://localhost:3000)
