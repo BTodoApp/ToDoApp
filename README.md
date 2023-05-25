@@ -21,10 +21,5 @@ To run the ToDoApp frontend locally, follow these steps:
 3. Start the development server: `npm start`
 4. Open the application in your browser at [http://localhost:3000](http://localhost:3000)
 
-## Figma Wireframe
-![Figma Wireframe](./image.png)
-
-To view the Figma frontend wireframe, click [here](./image.png).
-
 ## Contact
 For any inquiries or suggestions, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/brynner-ventura/).
