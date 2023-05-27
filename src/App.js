@@ -5,37 +5,38 @@ import Home from './pages/Home';
 import Nav from './components/Nav';
 
 function App() {
-
-  const [authenticated, setAuthenticated] = useState(false)
+  const [authenticated, setAuthenticated] = useState(false);
   const [user, setUser] = useState({
-    id:NaN,
+    id: NaN,
     email: '',
     name: ''
-  })
+  });
 
   const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-    setAuthenticated(true)
-  }
+    const user = await CheckSession();
+    setUser(user);
+    setAuthenticated(true);
+  };
 
-  const handleLogOut = () =>{
-    setUser(null)
-  }
+  const handleLogOut = () => {
+    setUser(null);
+  };
 
-  useEffect(()=>{
-    const token = localStorage.getItem('token')
+  useEffect(() => {
+    const token = localStorage.getItem('token');
     if (token) {
-      checkToken()
+      checkToken();
     }
-  },[])
+  }, []);
 
   return (
     <Router>
-      <Nav authenticated = { authenticated } user = { user } handleLogOut = { handleLogOut } />
-      <main>
+      <div style={{ position: 'fixed', top: 0, left: 0, right: 0 }}>
+        <Nav authenticated={authenticated} user={user} handleLogOut={handleLogOut} />
+      </div>
+      <main style={{ marginTop: '60px' }}>
         <Routes>
-          <Route path = "/" exact element = { <Home/> } />
+          <Route path="/" exact element={<Home />} />
         </Routes>
       </main>
     </Router>

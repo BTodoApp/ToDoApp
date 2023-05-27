@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   margin-top: 50px;
 }
 
@@ -9,25 +10,30 @@
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 20px;
-  margin-left: 6rem;
 }
 
 .content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
 }
+
 
 .text {
   margin-right: 20px;
 }
 
-.image {
-  width: 1080px; /* Adjust the width to your desired size */
-  margin-left: 20rem; /* Move the image to the right */
-  margin-top: 5rem; /* Move the image to the right */
-  height: 1920;
+.image-container {
+  flex-grow: 1; /* Allow the image container to grow and fill available space */
+  margin-left: 20px; /* Add margin to separate the text and image */
+  padding-right: 20px; /* Add padding on the right side */
+  display: flex;
+  justify-content: flex-end; /* Align the image to the right within the container */
 }
 
-h1 {
-  margin: 0; /* Remove the default margin */
+
+.image {
+  width: 100%; /* Adjust the width to your desired size */
+  max-width: 1080px; /* Set a maximum width if needed */
+  height: auto;
 }
