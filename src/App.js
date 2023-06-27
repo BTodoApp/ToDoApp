@@ -3,14 +3,19 @@ import React, { useState, useEffect } from 'react';
 import { CheckSession } from './services/auth';
 import Home from './pages/Home';
 import Nav from './components/Nav';
+import RegisterForm from './pages/RegisterForm';
+import LoginForm from './pages/LoginForm';
+import Profile from './pages/Profile';
+import Board from './pages/Board';
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
-  const [user, setUser] = useState({
+
+  const [authenticated, setAuthenticated] = useState(false)
+  const [user, setUser] = useState([{
     id: NaN,
-    email: '',
-    name: ''
-  });
+    name: '',
+    email: ''
+  }])
 
   const checkToken = async () => {
     const user = await CheckSession();
@@ -18,9 +23,10 @@ function App() {
     setAuthenticated(true);
   };
 
-  const handleLogOut = () => {
-    setUser(null);
-  };
+  const handleLogOut = async () =>{
+    setUser(null)
+    localStorage.clear();
+  }
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -31,12 +37,14 @@ function App() {
 
   return (
     <Router>
-      <div style={{ position: 'fixed', top: 0, left: 0, right: 0 }}>
-        <Nav authenticated={authenticated} user={user} handleLogOut={handleLogOut} />
-      </div>
-      <main style={{ marginTop: '60px' }}>
+      <Nav authenticated = { authenticated } user = { user } setUser = {setUser} handleLogOut = { handleLogOut } />
+      <main>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path = "/" exact element = { <Home/> } />
+          <Route path = "/register" exact element = { <RegisterForm user={user} setUser={setUser} setAuthenticated={setAuthenticated}/> } />
+          <Route path = "/login"  exact element = { <LoginForm  user={user} setUser={setUser} setAuthenticated={setAuthenticated}/> } />
+          <Route path = "/profile" exact element = { <Profile user={user} authenticated={authenticated} /> } />
+          <Route path = "/boardPage" exact element = { <Board user={user} authenticated={authenticated} /> } />
         </Routes>
       </main>
     </Router>
