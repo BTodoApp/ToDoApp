@@ -13,7 +13,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       <nav className="navigation">
         <ul className="list">
           {authenticated && user ? (
-            <>
+            <div>
               <li className="navLinks">
                 <Link className="navLinks" to="/profile">
                   My Profile
@@ -24,9 +24,9 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
                   Sign Out
                 </Link>
               </li>
-            </>
+            </div>
           ) : (
-            <>
+            <div>
               <li className="navLinks">
                 <Link className="navLinks" to="/register">
                   Register
@@ -37,7 +37,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
                   Login
                 </Link>
               </li>
-            </>
+            </div>
           )}
         </ul>
       </nav>
