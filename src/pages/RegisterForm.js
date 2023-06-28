@@ -27,11 +27,11 @@ const RegisterForm = () => {
         password: formData.password,
       });
   
-      await Login({
-        name: formData.name,
-        email: formData.email,
-        password: formData.password
-      })
+      // await Login({
+      //   name: formData.name,
+      //   email: formData.email,
+      //   password: formData.password
+      // })
       
       setFormData({
         name: "",
@@ -39,8 +39,8 @@ const RegisterForm = () => {
         password: "",
       });
 
-      window.location.reload(true)
-      navigate("/profile")
+      // window.location.reload(true)
+      navigate("/")
     } catch (error) {
       console.error(error);
       throw error;
