@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'http://localhost:3000'
-// export const BASE_URL = 'https://todobackend-production-44b4.up.railway.app'
+// export const BASE_URL = 'http://localhost:3000'
+export const BASE_URL = 'https://todobackend-production-44b4.up.railway.app'
 
 const Client = Axios.create({ baseURL: BASE_URL })
 
