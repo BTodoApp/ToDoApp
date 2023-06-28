@@ -39,7 +39,7 @@ const Profile = ({ authenticated, user }) => {
                     <div className='board-title'  onClick={((e) => handleClick(e, board.id))} >
                         {board.title}
                     </div>
-                    <Board data={board.id} />
+                    {/* <Board data={board.id} /> */}
                 </div>
             )
         })}
